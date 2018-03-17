@@ -1,0 +1,996 @@
+'select * from `users` where `email` = ? limit 1
+''select * from `users` where `email` = ? limit 1
+''select * from `users` where `email` = ? limit 1
+''update `users` set `last_login` = ?, `updated_at` = ? where `id` = ?
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1
+''select * from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1 order by `calculation_id` desc limit 20 offset 0
+''select * from `calculations` where `calculations`.`id` in (?, ?, ?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?, ?, ?) order by `date` desc
+''select * from `users` where `users`.`id` in (?, ?)
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `contractors` where `contractors`.`id` in (?, ?, ?, ?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?) order by `date` asc
+''select * from `orders` where `orders`.`calculation_id` in (?)
+''select * from `contractors` where `contractors`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?) order by `date` asc
+''select * from `orders` where `orders`.`calculation_id` in (?)
+''select * from `contractors` where `contractors`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?) order by `date` asc
+''select * from `orders` where `orders`.`calculation_id` in (?)
+''select * from `contractors` where `contractors`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?) order by `date` asc
+''select * from `orders` where `orders`.`calculation_id` in (?)
+''select * from `contractors` where `contractors`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?) order by `date` asc
+''select * from `orders` where `orders`.`calculation_id` in (?)
+''select * from `contractors` where `contractors`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `id` = ? and `remember_token` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?) order by `date` asc
+''select * from `orders` where `orders`.`calculation_id` in (?)
+''select * from `contractors` where `contractors`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?) order by `date` asc
+''update `users` set `last_activity` = ? where `id` = ?
+''select * from `users` where `id` = ? and `remember_token` = ? limit 1
+''update `users` set `last_activity` = ? where `id` = ?
+''select * from `users` where `id` = ? and `remember_token` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?) order by `date` asc
+''select * from `orders` where `orders`.`calculation_id` in (?)
+''select * from `contractors` where `contractors`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?)
+''select * from `users` where `id` = ? and `remember_token` = ? limit 1
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `users` where `id` = ? and `remember_token` = ? limit 1
+''select * from `users` where `id` = ? and `remember_token` = ? limit 1
+''select * from `users` where `id` = ? and `remember_token` = ? limit 1
+''select count(*) as aggregate from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1
+''select * from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1 order by `calculation_id` desc limit 20 offset 0
+''select * from `calculations` where `calculations`.`id` in (?, ?, ?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?, ?, ?) order by `date` desc
+''select * from `users` where `users`.`id` in (?, ?)
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `contractors` where `contractors`.`id` in (?, ?, ?, ?)
+''select * from `users` where `id` = ? and `remember_token` = ? limit 1
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `id` = ? and `remember_token` = ? limit 1
+''select * from `users` where `id` = ? and `remember_token` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?) order by `date` asc
+''select * from `orders` where `orders`.`calculation_id` in (?)
+''select * from `contractors` where `contractors`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?) order by `date` asc
+''update `users` set `last_activity` = ? where `id` = ?
+''select * from `users` where `id` = ? and `remember_token` = ? limit 1
+''select * from `users` where `id` = ? and `remember_token` = ? limit 1
+''select * from `users` where `id` = ? and `remember_token` = ? limit 1
+''select * from `users` where `username` = ? limit 1
+''update `users` set `last_login` = ?, `updated_at` = ? where `id` = ?
+''update `users` set `last_activity` = ? where `id` = ?
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1
+''select * from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1 order by `calculation_id` desc limit 20 offset 0
+''select * from `calculations` where `calculations`.`id` in (?, ?, ?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?, ?, ?) order by `date` desc
+''select * from `users` where `users`.`id` in (?, ?)
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `contractors` where `contractors`.`id` in (?, ?, ?, ?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `variables` where `variables`.`name` = ? limit 1
+''select * from `variables`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select `id`, `first_name`, `last_name` from `users`
+''select count(*) as aggregate from `calculations`
+''select `calculations`.* from `calculations` order by `id` desc limit 10 offset 0
+''select * from `users` where `users`.`id` in (?, ?, ?, ?)
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` in (?, ?, ?, ?) group by `user_id`
+''select * from `clients` where `clients`.`id` in (?, ?, ?, ?, ?, ?, ?)
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1
+''select * from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1 order by `calculation_id` desc limit 20 offset 0
+''select * from `calculations` where `calculations`.`id` in (?, ?, ?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?, ?, ?) order by `date` desc
+''select * from `users` where `users`.`id` in (?, ?)
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `contractors` where `contractors`.`id` in (?, ?, ?, ?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?) order by `date` asc
+''select * from `orders` where `orders`.`calculation_id` in (?)
+''select * from `contractors` where `contractors`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1
+''select * from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1 order by `calculation_id` desc limit 20 offset 0
+''select * from `calculations` where `calculations`.`id` in (?, ?, ?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?, ?, ?) order by `date` desc
+''select * from `users` where `users`.`id` in (?, ?)
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `contractors` where `contractors`.`id` in (?, ?, ?, ?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `variables` where `variables`.`name` = ? limit 1
+''select * from `variables`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select `id`, `first_name`, `last_name` from `users`
+''select count(*) as aggregate from `calculations`
+''select `calculations`.* from `calculations` order by `id` desc limit 10 offset 0
+''select * from `users` where `users`.`id` in (?, ?, ?, ?)
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` in (?, ?, ?, ?) group by `user_id`
+''select * from `clients` where `clients`.`id` in (?, ?, ?, ?, ?, ?, ?)
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`calculation_id` in (?)
+''select * from `subjects_elements` where `subjects_elements`.`subject_id` in (?, ?, ?, ?)
+''select * from `parts` where `parts`.`id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `constructors_rates` where `constructors_rates`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `elements_categories` where (select count(*) from `elements` where `elements`.`category_id` = `elements_categories`.`id`) >= 1 order by `sort` asc
+''select * from `elements` where `elements`.`category_id` in (?, ?, ?, ?, ?, ?, ?) order by `sort` asc
+''select * from `variables`
+''select * from `constructors_rates`
+''select * from `coefficients`
+''select * from `additional_coefficients`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `variables` where `variables`.`name` = ? limit 1
+''select * from `variables`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select `id`, `first_name`, `last_name` from `users`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `calculations`
+''select `calculations`.* from `calculations` order by `id` desc limit 10 offset 0
+''select * from `users` where `users`.`id` in (?, ?, ?, ?)
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` in (?, ?, ?, ?) group by `user_id`
+''select * from `clients` where `clients`.`id` in (?, ?, ?, ?, ?, ?, ?)
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1
+''select * from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1 order by `calculation_id` desc limit 20 offset 0
+''select * from `calculations` where `calculations`.`id` in (?, ?, ?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?, ?, ?) order by `date` desc
+''select * from `users` where `users`.`id` in (?, ?)
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `contractors` where `contractors`.`id` in (?, ?, ?, ?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?) order by `date` asc
+''select * from `orders` where `orders`.`calculation_id` in (?)
+''select * from `contractors` where `contractors`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `variables` where `variables`.`name` = ? limit 1
+''select * from `variables`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select `id`, `first_name`, `last_name` from `users`
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `calculations`
+''select `calculations`.* from `calculations` order by `id` desc limit 10 offset 0
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` in (?, ?, ?, ?)
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` in (?, ?, ?, ?) group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?, ?, ?, ?, ?, ?, ?)
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `elements_categories` where (select count(*) from `elements` where `elements`.`category_id` = `elements_categories`.`id`) >= 1 order by `sort` asc
+''select * from `elements` where `elements`.`category_id` in (?, ?, ?, ?, ?, ?, ?) order by `sort` asc
+''select * from `variables`
+''select * from `constructors_rates`
+''select * from `coefficients`
+''select * from `additional_coefficients`
+''select * from `users` where `users`.`id` = ? limit 1
+''select `id`, `first_name`, `last_name`, `email` from `clients` where `first_name` LIKE ? or `last_name` LIKE ? or `email` LIKE ?
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select `id`, `first_name`, `last_name`, `email` from `clients` where `first_name` LIKE ? or `last_name` LIKE ? or `email` LIKE ?
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select `id`, `title`, `unit`, `unit_price` from `parts` where `title` LIKE ?
+''update `users` set `last_activity` = ? where `id` = ?
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select `id`, `title`, `unit`, `unit_price` from `parts` where `title` LIKE ?
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''insert into `calculations` (`title`, `description`, `client_id`, `status`, `cost_manufacturing`, `cost_construct`, `cost_assembly`, `cost_total`, `additional_coefficient_id`, `discount`, `outlay`, `margin`, `delivery`, `install`, `delivery_at`, `install_at`, `user_id`, `updated_at`, `created_at`) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''insert into `calculations_subjects` (`title`, `num`, `x`, `y`, `z`, `cost_manufacturing`, `cost_construct`, `cost_assembly`, `cost_total`, `constructor_rate_id`, `outlay`, `margin`, `discount`, `calculation_id`, `volume`, `updated_at`, `created_at`) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''insert into `subjects_elements` (`title`, `character`, `x`, `y`, `z`, `unit_price`, `part_id`, `total`, `price`, `sum`, `subject_id`, `area`, `volume`) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`calculation_id` in (?)
+''select * from `subjects_elements` where `subjects_elements`.`subject_id` in (?)
+''select * from `parts` where `parts`.`id` in (?)
+''select * from `constructors_rates` where `constructors_rates`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `elements_categories` where (select count(*) from `elements` where `elements`.`category_id` = `elements_categories`.`id`) >= 1 order by `sort` asc
+''select * from `elements` where `elements`.`category_id` in (?, ?, ?, ?, ?, ?, ?) order by `sort` asc
+''select * from `variables`
+''select * from `constructors_rates`
+''select * from `coefficients`
+''select * from `additional_coefficients`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1
+''select * from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1 order by `calculation_id` desc limit 20 offset 0
+''select * from `calculations` where `calculations`.`id` in (?, ?, ?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?, ?, ?) order by `date` desc
+''select * from `users` where `users`.`id` in (?, ?)
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `contractors` where `contractors`.`id` in (?, ?, ?, ?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `variables` where `variables`.`name` = ? limit 1
+''select * from `variables`
+''update `users` set `last_activity` = ? where `id` = ?
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select `id`, `first_name`, `last_name` from `users`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `calculations` where `user_id` = ?
+''select `calculations`.* from `calculations` where `user_id` = ? order by `id` desc limit 10 offset 0
+''select * from `users` where `users`.`id` in (?)
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` in (?) group by `user_id`
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`calculation_id` in (?)
+''select * from `subjects_elements` where `subjects_elements`.`subject_id` in (?)
+''select * from `parts` where `parts`.`id` in (?)
+''select * from `constructors_rates` where `constructors_rates`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `elements_categories` where (select count(*) from `elements` where `elements`.`category_id` = `elements_categories`.`id`) >= 1 order by `sort` asc
+''select * from `elements` where `elements`.`category_id` in (?, ?, ?, ?, ?, ?, ?) order by `sort` asc
+''select * from `variables`
+''select * from `constructors_rates`
+''select * from `coefficients`
+''select * from `additional_coefficients`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `calculations_subjects` where `calculations_subjects`.`calculation_id` in (?)
+''select * from `subjects_elements` where `subjects_elements`.`subject_id` in (?)
+''select * from `parts` where `parts`.`id` in (?)
+''select * from `elements` where `elements`.`id` in (?)
+''select * from `elements_categories` where `elements_categories`.`id` in (?)
+''select * from `constructors_rates` where `constructors_rates`.`id` in (?)
+''select * from `additional_coefficients` where `additional_coefficients`.`id` in (?)
+''select * from `users` where `users`.`id` in (?)
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1
+''select * from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1 order by `calculation_id` desc limit 20 offset 0
+''select * from `calculations` where `calculations`.`id` in (?, ?, ?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?, ?, ?) order by `date` desc
+''select * from `users` where `users`.`id` in (?, ?)
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `contractors` where `contractors`.`id` in (?, ?, ?, ?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?) order by `date` asc
+''select * from `orders` where `orders`.`calculation_id` in (?)
+''select * from `contractors` where `contractors`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `variables` where `variables`.`name` = ? limit 1
+''select * from `variables`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select `id`, `first_name`, `last_name` from `users`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `calculations` where `user_id` = ?
+''select `calculations`.* from `calculations` where `user_id` = ? order by `id` desc limit 10 offset 0
+''select * from `users` where `users`.`id` in (?)
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` in (?) group by `user_id`
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `calculations` where `user_id` = ?
+''select `calculations`.* from `calculations` where `user_id` = ? order by `id` desc limit 10 offset 0
+''select * from `users` where `users`.`id` in (?)
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` in (?) group by `user_id`
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1
+''select * from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1 order by `calculation_id` desc limit 20 offset 0
+''select * from `calculations` where `calculations`.`id` in (?, ?, ?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?, ?, ?) order by `date` desc
+''select * from `users` where `users`.`id` in (?, ?)
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `contractors` where `contractors`.`id` in (?, ?, ?, ?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1
+''select * from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1 order by `calculation_id` desc limit 20 offset 0
+''select * from `calculations` where `calculations`.`id` in (?, ?, ?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?, ?, ?) order by `date` desc
+''select * from `users` where `users`.`id` in (?, ?)
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `contractors` where `contractors`.`id` in (?, ?, ?, ?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1
+''select * from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1 order by `calculation_id` asc limit 20 offset 0
+''select * from `calculations` where `calculations`.`id` in (?, ?, ?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?, ?, ?) order by `date` desc
+''select * from `users` where `users`.`id` in (?, ?)
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `contractors` where `contractors`.`id` in (?, ?, ?, ?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1
+''select * from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1 order by `calculation_id` desc limit 20 offset 0
+''select * from `calculations` where `calculations`.`id` in (?, ?, ?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?, ?, ?) order by `date` desc
+''select * from `users` where `users`.`id` in (?, ?)
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `contractors` where `contractors`.`id` in (?, ?, ?, ?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `variables` where `variables`.`name` = ? limit 1
+''select * from `variables`
+''update `users` set `last_activity` = ? where `id` = ?
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select `id`, `first_name`, `last_name` from `users`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `calculations`
+''select `calculations`.* from `calculations` order by `id` desc limit 10 offset 0
+''select * from `users` where `users`.`id` in (?, ?, ?, ?)
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` in (?, ?, ?, ?) group by `user_id`
+''select * from `clients` where `clients`.`id` in (?, ?, ?, ?, ?, ?, ?)
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select `id`, `first_name`, `last_name` from `users`
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `clients`
+''select `clients`.* from `clients` order by `id` desc limit 10 offset 0
+''select * from `users` where `users`.`id` in (?, ?)
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `variables` where `variables`.`name` = ? limit 1
+''select * from `variables`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `parts_groups`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select `id`, `first_name`, `last_name` from `users`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select `id`, `first_name`, `last_name` from `users`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `clients`
+''select `clients`.* from `clients` order by `id` desc limit 10 offset 0
+''select * from `users` where `users`.`id` in (?, ?)
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `elements_categories` order by `sort` asc
+''select * from `elements` where `elements`.`category_id` in (?, ?, ?, ?, ?, ?, ?) order by `sort` asc
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `elements_categories` order by `sort` asc
+''select * from `elements` where `elements`.`category_id` in (?, ?, ?, ?, ?, ?, ?) order by `sort` asc
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1
+''select * from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1 order by `calculation_id` desc limit 20 offset 0
+''select * from `calculations` where `calculations`.`id` in (?, ?, ?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?, ?, ?) order by `date` desc
+''select * from `users` where `users`.`id` in (?, ?)
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `contractors` where `contractors`.`id` in (?, ?, ?, ?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `variables` where `variables`.`name` = ? limit 1
+''select * from `variables`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select `id`, `first_name`, `last_name` from `users`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `elements_categories` where (select count(*) from `elements` where `elements`.`category_id` = `elements_categories`.`id`) >= 1 order by `sort` asc
+''select * from `elements` where `elements`.`category_id` in (?, ?, ?, ?, ?, ?, ?) order by `sort` asc
+''select * from `variables`
+''select * from `constructors_rates`
+''select * from `coefficients`
+''select * from `additional_coefficients`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `variables` where `variables`.`name` = ? limit 1
+''select * from `variables`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select `id`, `first_name`, `last_name` from `users`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `calculations` where `user_id` = ?
+''select `calculations`.* from `calculations` where `user_id` = ? order by `id` desc limit 10 offset 0
+''select * from `users` where `users`.`id` in (?)
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` in (?) group by `user_id`
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`calculation_id` in (?)
+''select * from `subjects_elements` where `subjects_elements`.`subject_id` in (?)
+''select * from `parts` where `parts`.`id` in (?)
+''select * from `constructors_rates` where `constructors_rates`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `elements_categories` where (select count(*) from `elements` where `elements`.`category_id` = `elements_categories`.`id`) >= 1 order by `sort` asc
+''select * from `elements` where `elements`.`category_id` in (?, ?, ?, ?, ?, ?, ?) order by `sort` asc
+''select * from `variables`
+''select * from `constructors_rates`
+''select * from `coefficients`
+''select * from `additional_coefficients`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `calculations_subjects` where `calculations_subjects`.`calculation_id` in (?)
+''select * from `subjects_elements` where `subjects_elements`.`subject_id` in (?)
+''update `calculations` set `updated_at` = ?, `status` = ? where `id` = ?
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`calculation_id` in (?)
+''select * from `subjects_elements` where `subjects_elements`.`subject_id` in (?)
+''select * from `parts` where `parts`.`id` in (?)
+''select * from `constructors_rates` where `constructors_rates`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `elements_categories` where (select count(*) from `elements` where `elements`.`category_id` = `elements_categories`.`id`) >= 1 order by `sort` asc
+''select * from `elements` where `elements`.`category_id` in (?, ?, ?, ?, ?, ?, ?) order by `sort` asc
+''select * from `variables`
+''select * from `constructors_rates`
+''select * from `coefficients`
+''select * from `additional_coefficients`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1
+''select * from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1 order by `calculation_id` desc limit 20 offset 0
+''select * from `calculations` where `calculations`.`id` in (?, ?, ?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?, ?, ?) order by `date` desc
+''select * from `users` where `users`.`id` in (?, ?)
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `contractors` where `contractors`.`id` in (?, ?, ?, ?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1
+''select * from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1 order by `calculation_id` asc limit 20 offset 0
+''select * from `calculations` where `calculations`.`id` in (?, ?, ?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?, ?, ?) order by `date` desc
+''select * from `users` where `users`.`id` in (?, ?)
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `contractors` where `contractors`.`id` in (?, ?, ?, ?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1
+''select * from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1 order by `calculation_id` desc limit 20 offset 0
+''select * from `calculations` where `calculations`.`id` in (?, ?, ?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?, ?, ?) order by `date` desc
+''select * from `users` where `users`.`id` in (?, ?)
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `contractors` where `contractors`.`id` in (?, ?, ?, ?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `calculations` where `user_id` = ?
+''select `calculations`.* from `calculations` where `user_id` = ? order by `id` desc limit 10 offset 0
+''select * from `users` where `users`.`id` in (?)
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` in (?) group by `user_id`
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`calculation_id` in (?)
+''select * from `subjects_elements` where `subjects_elements`.`subject_id` in (?)
+''select * from `parts` where `parts`.`id` in (?, ?, ?)
+''select * from `constructors_rates` where `constructors_rates`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `elements_categories` where (select count(*) from `elements` where `elements`.`category_id` = `elements_categories`.`id`) >= 1 order by `sort` asc
+''select * from `elements` where `elements`.`category_id` in (?, ?, ?, ?, ?, ?, ?) order by `sort` asc
+''select * from `variables`
+''select * from `constructors_rates`
+''select * from `coefficients`
+''select * from `additional_coefficients`
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `calculations` where `user_id` = ?
+''select `calculations`.* from `calculations` where `user_id` = ? order by `id` desc limit 10 offset 0
+''select * from `users` where `users`.`id` in (?)
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` in (?) group by `user_id`
+''select * from `clients` where `clients`.`id` in (?, ?)
+''update `users` set `last_activity` = ? where `id` = ?
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`calculation_id` in (?)
+''select * from `subjects_elements` where `subjects_elements`.`subject_id` in (?)
+''select * from `parts` where `parts`.`id` in (?)
+''select * from `constructors_rates` where `constructors_rates`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `elements_categories` where (select count(*) from `elements` where `elements`.`category_id` = `elements_categories`.`id`) >= 1 order by `sort` asc
+''select * from `elements` where `elements`.`category_id` in (?, ?, ?, ?, ?, ?, ?) order by `sort` asc
+''select * from `variables`
+''select * from `constructors_rates`
+''select * from `coefficients`
+''select * from `additional_coefficients`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `calculations_subjects` where `calculations_subjects`.`calculation_id` in (?)
+''select * from `subjects_elements` where `subjects_elements`.`subject_id` in (?)
+''update `calculations` set `updated_at` = ?, `status` = ? where `id` = ?
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `calculations_subjects` where `calculations_subjects`.`calculation_id` in (?)
+''select * from `subjects_elements` where `subjects_elements`.`subject_id` in (?)
+''insert into `orders` (`cost`, `subject_id`, `calculation_id`, `called_at`, `next_call_at`, `updated_at`, `created_at`) values (?, ?, ?, ?, ?, ?, ?)
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`calculation_id` in (?)
+''select * from `subjects_elements` where `subjects_elements`.`subject_id` in (?)
+''select * from `parts` where `parts`.`id` in (?)
+''select * from `constructors_rates` where `constructors_rates`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `elements_categories` where (select count(*) from `elements` where `elements`.`category_id` = `elements_categories`.`id`) >= 1 order by `sort` asc
+''select * from `elements` where `elements`.`category_id` in (?, ?, ?, ?, ?, ?, ?) order by `sort` asc
+''select * from `variables`
+''select * from `constructors_rates`
+''select * from `coefficients`
+''select * from `additional_coefficients`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1
+''select * from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1 order by `calculation_id` desc limit 20 offset 0
+''select * from `calculations` where `calculations`.`id` in (?, ?, ?, ?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?, ?, ?, ?) order by `date` desc
+''select * from `users` where `users`.`id` in (?, ?, ?)
+''select * from `clients` where `clients`.`id` in (?, ?, ?)
+''select * from `contractors` where `contractors`.`id` in (?, ?, ?, ?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?) order by `date` asc
+''select * from `orders` where `orders`.`calculation_id` in (?)
+''select * from `contractors` where `contractors`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `users` where `username` = ? limit 1
+''update `users` set `last_login` = ?, `updated_at` = ? where `id` = ?
+''update `users` set `last_activity` = ? where `id` = ?
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `variables` where `variables`.`name` = ? limit 1
+''select * from `variables`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select `id`, `first_name`, `last_name` from `users`
+''select count(*) as aggregate from `calculations`
+''select `calculations`.* from `calculations` order by `id` desc limit 10 offset 0
+''select * from `users` where `users`.`id` in (?, ?, ?, ?)
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` in (?, ?, ?, ?) group by `user_id`
+''select * from `clients` where `clients`.`id` in (?, ?, ?, ?, ?, ?, ?)
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`calculation_id` in (?)
+''select * from `subjects_elements` where `subjects_elements`.`subject_id` in (?)
+''select * from `parts` where `parts`.`id` in (?)
+''select * from `constructors_rates` where `constructors_rates`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `elements_categories` where (select count(*) from `elements` where `elements`.`category_id` = `elements_categories`.`id`) >= 1 order by `sort` asc
+''select * from `elements` where `elements`.`category_id` in (?, ?, ?, ?, ?, ?, ?) order by `sort` asc
+''select * from `variables`
+''select * from `constructors_rates`
+''select * from `coefficients`
+''select * from `additional_coefficients`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1
+''select * from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1 order by `calculation_id` desc limit 20 offset 0
+''select * from `calculations` where `calculations`.`id` in (?, ?, ?)
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `incomes` where `incomes`.`calculation_id` in (?, ?, ?) order by `date` desc
+''select * from `users` where `users`.`id` in (?, ?)
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `contractors` where `contractors`.`id` in (?, ?, ?, ?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?) order by `date` asc
+''select * from `orders` where `orders`.`calculation_id` in (?)
+''select * from `contractors` where `contractors`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `variables` where `variables`.`name` = ? limit 1
+''select * from `variables`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select `id`, `first_name`, `last_name` from `users`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `variables` where `variables`.`name` = ? limit 1
+''select * from `variables`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select `id`, `first_name`, `last_name` from `users`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `elements_categories` where (select count(*) from `elements` where `elements`.`category_id` = `elements_categories`.`id`) >= 1 order by `sort` asc
+''select * from `elements` where `elements`.`category_id` in (?, ?, ?, ?, ?, ?, ?) order by `sort` asc
+''select * from `variables`
+''select * from `constructors_rates`
+''select * from `coefficients`
+''select * from `additional_coefficients`
+''select * from `users` where `users`.`id` = ? limit 1
+''select `id`, `first_name`, `last_name`, `email` from `clients` where `first_name` LIKE ? or `last_name` LIKE ? or `email` LIKE ?
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `calculations`
+''select `calculations`.* from `calculations` order by `id` desc limit 10 offset 0
+''select * from `users` where `users`.`id` in (?, ?, ?, ?)
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` in (?, ?, ?, ?) group by `user_id`
+''select * from `clients` where `clients`.`id` in (?, ?, ?, ?, ?, ?, ?)
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`calculation_id` in (?)
+''select * from `subjects_elements` where `subjects_elements`.`subject_id` in (?)
+''select * from `parts` where `parts`.`id` in (?)
+''select * from `constructors_rates` where `constructors_rates`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `elements_categories` where (select count(*) from `elements` where `elements`.`category_id` = `elements_categories`.`id`) >= 1 order by `sort` asc
+''select * from `elements` where `elements`.`category_id` in (?, ?, ?, ?, ?, ?, ?) order by `sort` asc
+''select * from `variables`
+''select * from `constructors_rates`
+''select * from `coefficients`
+''select * from `additional_coefficients`
+''select * from `users` where `users`.`id` = ? limit 1
+''update `users` set `last_activity` = ? where `id` = ?
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as aggregate from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1
+''select * from `orders` where (select count(*) from `calculations` where `orders`.`calculation_id` = `calculations`.`id`) >= 1 order by `calculation_id` desc limit 20 offset 0
+''select * from `calculations` where `calculations`.`id` in (?, ?, ?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?, ?, ?) order by `date` desc
+''select * from `users` where `users`.`id` in (?, ?)
+''select * from `clients` where `clients`.`id` in (?, ?)
+''select * from `contractors` where `contractors`.`id` in (?, ?, ?, ?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) order by `date` desc
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select count(*) as count, `user_id` from `calculations` where `calculations`.`user_id` = ? group by `user_id`
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?) order by `date` asc
+''select * from `orders` where `orders`.`calculation_id` in (?)
+''select * from `contractors` where `contractors`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?)
+''select * from `files` where `files`.`fileable_id` in (?) and `files`.`fileable_type` = ?
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?) order by `date` asc
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?) order by `date` asc
+''select * from `orders` where `orders`.`calculation_id` in (?)
+''select * from `contractors` where `contractors`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?)
+''select * from `files` where `files`.`fileable_id` in (?, ?, ?, ?, ?, ?, ?) and `files`.`fileable_type` = ?
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?) order by `date` asc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?) order by `date` asc
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `orders` where `orders`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `orders` where `orders`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `orders` where `orders`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `calculations` where `calculations`.`id` = ? limit 1
+''select * from `clients` where `clients`.`id` in (?)
+''select * from `incomes` where `incomes`.`calculation_id` in (?) order by `date` asc
+''select * from `orders` where `orders`.`calculation_id` in (?)
+''select * from `contractors` where `contractors`.`id` in (?)
+''select * from `calculations_subjects` where `calculations_subjects`.`id` in (?, ?, ?, ?, ?, ?, ?)
+''select * from `files` where `files`.`fileable_id` in (?, ?, ?, ?, ?, ?, ?) and `files`.`fileable_type` = ?
+''select * from `contractor_outlay` where `contractor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?) order by `date` asc
+''select * from `constructor_outlay` where `constructor_outlay`.`order_id` in (?, ?, ?, ?, ?, ?, ?) order by `date` asc
+''update `users` set `last_activity` = ? where `id` = ?
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `orders` where `orders`.`id` = ? limit 1
+''update `users` set `last_activity` = ? where `id` = ?
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `orders` where `orders`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `orders` where `orders`.`id` = ? limit 1
+''update `users` set `last_activity` = ? where `id` = ?
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `orders` where `orders`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `orders` where `orders`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `orders` where `orders`.`id` = ? limit 1
+''update `users` set `last_activity` = ? where `id` = ?
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `orders` where `orders`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `orders` where `orders`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `orders` where `orders`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `orders` where `orders`.`id` = ? limit 1
+''insert into `files` (`src`, `name`, `fileable_type`, `fileable_id`, `created_by`, `updated_at`, `created_at`) values (?, ?, ?, ?, ?, ?, ?)
+''update `users` set `last_activity` = ? where `id` = ?
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `orders` where `orders`.`id` = ? limit 1
+''insert into `files` (`src`, `name`, `fileable_type`, `fileable_id`, `created_by`, `updated_at`, `created_at`) values (?, ?, ?, ?, ?, ?, ?)
+''update `users` set `last_activity` = ? where `id` = ?
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `files` where `files`.`id` = ? limit 1
+''select * from `orders` where `orders`.`id` = ? limit 1
+''delete from `files` where `id` = ?
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `users` where `users`.`id` = ? limit 1
+''select * from `files` where `files`.`id` = ? limit 1
+''select * from `orders` where `orders`.`id` = ? limit 1
+''delete from `files` where `id` = ?
+''select * from `users` where `users`.`id` = ? limit 1
+'
